@@ -29,7 +29,7 @@ Compliments.prototype.rotateCompliment = function(){
 }
 Compliments.prototype.centralise = function(){
   var height = this.container.height();
-  var bHeight = this.body.height();
+  var bHeight = jQuery(window).height();
   var offset = (bHeight/2)-(height/2);
   this.container.css({marginTop:offset+'px'});
 }
