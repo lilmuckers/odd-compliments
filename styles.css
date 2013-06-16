@@ -46,6 +46,7 @@ body{
   }
   #compliment{
     font-size: 30px;
+    max-width: 480px;
   }
   #footer{
     display: none;
@@ -57,15 +58,29 @@ body{
   }
   #compliment{
     font-size: 20px;
+    max-width: 320px;
   }
 }
 
 /* Smartphones (landscape) ----------- */
 @media only screen
 and (min-width : 321px) {
+  #title{
+    font-size: 30px;
+  }
+  #compliment{
+    font-size: 10px;
+  }
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
+  #title{
+    font-size: 30px;
+  }
+  #compliment{
+    font-size: 20px;
+    max-width: 300px;
+  }
 }
