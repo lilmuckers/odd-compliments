@@ -26,6 +26,7 @@ Compliments.prototype.switchCompliment = function(index){
   if(!index){
     var index = Math.floor(Math.random()*this.compliments.length);
     window.location.hash = index;
+    setTimeout(this.rotateCompliment.bind(this), this.delay);
   }
   
   //get the compliment
@@ -38,10 +39,6 @@ Compliments.prototype.switchCompliment = function(index){
   this.body.animate({backgroundColor:color},150);
   this.centralise();
   this.container.fadeIn();
-  
-  if(!index){
-    setTimeout(this.rotateCompliment.bind(this), this.delay);
-  }
 }
 Compliments.prototype.centralise = function(){
   var height = this.container.height();
