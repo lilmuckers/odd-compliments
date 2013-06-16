@@ -20,7 +20,7 @@ Compliments.prototype.rotateCompliment = function(){
       this.container.text(compliment);
       
       //change the background color
-      this.body.
+      this.body.animate({backgroundColor:color},150);
     }.bind(this)
   );
   
