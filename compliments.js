@@ -25,6 +25,7 @@ Compliments.prototype.switchCompliment = function(index){
   //get the compliment
   if(!index){
     var index = Math.floor(Math.random()*this.compliments.length);
+    History.pushState({state:1}, "Odd Compliment #"+History.getHash(), History.getHash());
     window.location.hash = index;
     setTimeout(this.rotateCompliment.bind(this), this.delay);
   }
