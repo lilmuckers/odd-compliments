@@ -31,6 +31,28 @@ body{
   bottom: 5px;
   right: 5px;
 }
+#complimentList{
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  overflow: hidden;
+  width: 10px;
+}
+#complimentList div{
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 5px;
+  height: 5px;
+  margin-bottom: 6px;
+  border-radius: 2px;
+}
+#complimentList div:hover{
+  background-color: rgba(255, 255, 255, 0.0);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
 
 @media screen and (max-width: 820px) {
   #title{
@@ -38,6 +60,9 @@ body{
   }
   #compliment{
     font-size: 40px;
+  }
+  #complimentList{
+    display: none;
   }
 }
 
