@@ -7,25 +7,41 @@ var Compliments = function(filename){
 Compliments.prototype.parseCompliments = function(data){
   this.colors = data.colors;
   this.compliments = data.compliments;
-  this.rotateCompliment();
+  if(location.hash){
+    var complimentIndex = location.hash.substring(1);
+    this.switchCompliment(parseInt(complimentIndex));
+  } else {
+    this.rotateCompliment();
+  }
 }
 Compliments.prototype.rotateCompliment = function(){
   //fade out old text
-  this.container.fadeOut(200, function(){
-      //obtain the new colour and compliment
-      var color = this.colors[Math.floor(Math.random()*this.colors.length)];
-      var compliment = this.compliments[Math.floor(Math.random()*this.compliments.length)];
-      
-      //update the container with the text
-      this.container.text(compliment);
-      
-      //change the background color
-      this.body.animate({backgroundColor:color},150);
-      this.centralise();
-      this.container.fadeIn();
-      setTimeout(this.rotateCompliment.bind(this), this.delay);
-    }.bind(this)
-  );
+  this.container.fadeOut(200, this.switchCompliment.bind(this));
+}
+Compliments.prototype.switchCompliment = function(index){
+  //obtain the new colour and compliment
+  var color = this.colors[Math.floor(Math.random()*this.colors.length)];
+  
+  //get the compliment
+  if(!index){
+    var index = Math.floor(Math.random()*this.compliments.length);
+    window.location.hash = index;
+  }
+  
+  //get the compliment
+  var compliment = this.compliments[index];
+  
+  //update the container with the text
+  this.container.text(compliment);
+  
+  //change the background color
+  this.body.animate({backgroundColor:color},150);
+  this.centralise();
+  this.container.fadeIn();
+  
+  if(!index){
+    setTimeout(this.rotateCompliment.bind(this), this.delay);
+  }
 }
 Compliments.prototype.centralise = function(){
   var height = this.container.height();
