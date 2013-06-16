@@ -21,11 +21,17 @@ Compliments.prototype.rotateCompliment = function(){
       
       //change the background color
       this.body.animate({backgroundColor:color},150);
+      this.centralise();
       this.container.fadeIn();
-      setTimeout(this.rotateCompliment.bind(this), 4000);
+      setTimeout(this.rotateCompliment.bind(this), this.delay);
     }.bind(this)
   );
-  
+}
+Compliments.prototype.centralise = function(){
+  var height = this.container.height();
+  var bHeight = this.body.height();
+  var offset = (bHeight/2)-(height/2);
+  this.container.css({marginTop:offset+'px'});
 }
 
 
