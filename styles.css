@@ -12,4 +12,21 @@ body{
   margin-left: auto;
   margin-right: auto;
   text-shadow: 2px 2px 2px #000000;
+  z-index: 10;
+}
+#title, #footer a, #footer{
+  color: rgba(255, 255, 255, 0.2);
+}
+#title{
+  font-size: 100px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+#footer{
+  font-size: 15px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 }
