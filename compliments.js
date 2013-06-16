@@ -2,7 +2,7 @@ var Compliments = function(filename){
   jQuery.get(filename, this.parseCompliments.bind(this))
   this.container = jQuery('#compliment');
   this.body = jQuery('body');
-  this.delay = 5000;
+  this.delay = 10000;
 }
 Compliments.prototype.parseCompliments = function(data){
   this.colors = data.colors;
