@@ -21,6 +21,8 @@ Compliments.prototype.rotateCompliment = function(){
       
       //change the background color
       this.body.animate({backgroundColor:color},150);
+      this.container.fadeIn();
+      setTimeout(this.rotateCompliment.bind(this), 4000);
     }.bind(this)
   );
   
