@@ -2,6 +2,7 @@ var Compliments = function(filename){
   this.container = jQuery('#compliment');
   this.body = jQuery('body');
   this.list = jQuery('#complimentList');
+  this.listItems = [];
   this.delay = 10000;
   jQuery.get(filename, this.parseCompliments.bind(this));
   jQuery(window).keyup(this.keyChange.bind(this));
@@ -41,6 +42,7 @@ Compliments.prototype.parseCompliments = function(data){
     var item = jQuery('<div></div>');
     item.data('index', i);
     item.click(this.switchClick.bind(this));
+    this.listItems.push(item);
     this.list.append(item);
   }
   
@@ -75,6 +77,14 @@ Compliments.prototype.switchCompliment = function(index){
     var index = Math.floor(Math.random()*this.compliments.length);
     //History.pushState({state:1}, "Odd Compliment #"+History.getHash(), '#'+History.getHash());
     this.timeoutThing = setTimeout(this.rotateCompliment.bind(this), this.delay);
+  }
+  
+  //activate the button
+  jQuery('#complimentList div.active').removeClass('active');
+  for(var i=0;i<this.listItems.length;i++){
+    if(jQuery(this.listItems[i]).data('index') == index){
+      jQuery(this.listItems[i]).addClass('active');
+    }
   }
   
   //set the hash
