@@ -16,6 +16,7 @@ Compliments.prototype.keyChange = function(event){
       if(index < 0){
         index = this.compliments.length-1;
       }
+      console.log(index);
       break;
     //next
     case 39:
@@ -26,7 +27,7 @@ Compliments.prototype.keyChange = function(event){
       }
       break;
   }
-  if(index){
+  if(index || index === 0){
     if(this.timeoutThing){
       clearTimeout(this.timeoutThing);
     }
@@ -57,7 +58,7 @@ Compliments.prototype.parseCompliments = function(data){
 Compliments.prototype.switchClick = function(event){
   var index = jQuery(event.target).data('index');
   
-  if(index){
+  if(index || index === 0){
     if(this.timeoutThing){
       clearTimeout(this.timeoutThing);
     }
@@ -73,7 +74,7 @@ Compliments.prototype.switchCompliment = function(index){
   var color = this.colors[Math.floor(Math.random()*this.colors.length)];
   
   //get the compliment
-  if(!index){
+  if(!index &&  index !== 0){
     var index = Math.floor(Math.random()*this.compliments.length);
     //History.pushState({state:1}, "Odd Compliment #"+History.getHash(), '#'+History.getHash());
     this.timeoutThing = setTimeout(this.rotateCompliment.bind(this), this.delay);

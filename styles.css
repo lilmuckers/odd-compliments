@@ -34,6 +34,7 @@ body{
 #complimentList{
   position: absolute;
   top: 50px;
+  padding-top: 2px;
   right: 50px;
   bottom: 50px;
   overflow: hidden;
