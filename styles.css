@@ -1,0 +1,15 @@
+body{
+  font-family: 'Marmelad', sans-serif;
+  background-color: #62A9FF;
+  height: 100%;
+  padding: 0;
+}
+#compliment{
+  width: 500px;
+  font-size: 50px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 2px 2px 2px #000000;
+}
