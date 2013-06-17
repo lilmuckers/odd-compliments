@@ -3,7 +3,7 @@ var Compliments = function(filename){
   this.body = jQuery('body');
   this.list = jQuery('#complimentList');
   this.listItems = [];
-  this.delay = 10000;
+  this.delay = 7000;
   jQuery.get(filename, this.parseCompliments.bind(this));
   jQuery(window).keyup(this.keyChange.bind(this));
 }
