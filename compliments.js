@@ -16,7 +16,6 @@ Compliments.prototype.keyChange = function(event){
       if(index < 0){
         index = this.compliments.length-1;
       }
-      console.log(index);
       break;
     //next
     case 39:
